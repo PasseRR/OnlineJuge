@@ -9,6 +9,7 @@ func convert(s string, numRows int) string {
 	if length == 0 || length == 1 || numRows == 1 {
 		return s
 	}
+	// golang 字符串拼接
 	var buffer bytes.Buffer
 	// z字直线部分索引高度 从0开始
 	height := numRows - 1
