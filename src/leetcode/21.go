@@ -15,10 +15,9 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	// 依次取出链表中的元素比较 直到其中一个链表为空
 	for node1 != nil && node2 != nil {
-		if current.Next == nil {
-			current.Next = &ListNode{}
-			current = current.Next
-		}
+		current.Next = &ListNode{}
+		current = current.Next
+
 		if node1.Val > node2.Val {
 			current.Val = node2.Val
 			node2 = node2.Next
