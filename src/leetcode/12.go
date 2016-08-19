@@ -1,9 +1,7 @@
-package main
+package leetcode
 
 import (
 	"bytes"
-	"fmt"
-	"strings"
 )
 
 func intToRoman(num int) string {
@@ -27,9 +25,4 @@ func intToRoman(num int) string {
 	}
 
 	return buffer.String()
-}
-
-func main() {
-	fmt.Printf("%v\n", strings.Repeat("1", 0))
-	fmt.Printf("%v\n", intToRoman(9))
 }

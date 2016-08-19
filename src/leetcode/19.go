@@ -1,11 +1,4 @@
-package main
-
-import "fmt"
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+package leetcode
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	// 单链表的长度
@@ -25,22 +18,5 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 			i++
 		}
 		return head
-	}
-}
-
-func main() {
-	node := &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-			Next: &ListNode{
-				Val: 3,
-			},
-		},
-	}
-
-	result := removeNthFromEnd(node, 3)
-	for i := result; i != nil; i = i.Next {
-		fmt.Printf("%v->", i.Val)
 	}
 }

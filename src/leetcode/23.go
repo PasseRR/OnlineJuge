@@ -1,14 +1,8 @@
-package main
+package leetcode
 
 import (
-	"fmt"
 	"math"
 )
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
 
 func mergeKLists(lists []*ListNode) *ListNode {
 	temp := lists
@@ -67,40 +61,4 @@ func mergeKLists(lists []*ListNode) *ListNode {
 	}
 
 	return node.Next
-}
-
-func printNodeArray(lists []*ListNode) {
-	for _, item := range lists {
-		printNode(item)
-	}
-}
-
-func printNode(node *ListNode) {
-	for i := node; i != nil; i = i.Next {
-		fmt.Printf("%v->", i.Val)
-	}
-	fmt.Printf("\n")
-}
-
-func main() {
-	node1 := &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 3,
-		},
-	}
-
-	node2 := &ListNode{
-		Val: 2,
-		Next: &ListNode{
-			Val: 4,
-			Next: &ListNode{
-				Val: 55,
-			},
-		},
-	}
-
-	lists := []*ListNode{node1, node2}
-
-	printNode(mergeKLists(lists))
 }

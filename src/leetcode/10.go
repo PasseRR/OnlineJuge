@@ -1,8 +1,4 @@
-package main
-
-import (
-	"fmt"
-)
+package leetcode
 
 func isMatch(s string, p string) bool {
 	i, j := 0, 0
@@ -47,8 +43,4 @@ func isMatch(s string, p string) bool {
 	}
 
 	return true
-}
-
-func main() {
-	fmt.Printf("%v\n", isMatch("a", "ab*"))
 }

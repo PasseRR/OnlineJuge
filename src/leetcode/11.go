@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package leetcode
 
 func maxArea(height []int) int {
 	var max = func(a, b int) int {
@@ -29,8 +27,4 @@ func maxArea(height []int) int {
 		}
 	}
 	return area
-}
-
-func main() {
-	fmt.Printf("%v\n", maxArea([]int{1, 1}))
 }

@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package leetcode
 
 func letterCombinations(digits string) []string {
 	digitMapLetter := make(map[string]string)
@@ -37,8 +35,4 @@ func letterCombinations(digits string) []string {
 	}
 
 	return result
-}
-
-func main() {
-	fmt.Printf("%v\n", letterCombinations("234"))
 }

@@ -1,6 +1,6 @@
-package main
+package leetcode
+
 import (
-	"fmt"
 	"math"
 )
 
@@ -13,7 +13,7 @@ func reverse(x int) int {
 	var result int
 	for x > 0 {
 		result *= 10
-		result += x%10
+		result += x % 10
 		x /= 10
 	}
 
@@ -26,9 +26,4 @@ func reverse(x int) int {
 	}
 
 	return result
-}
-
-func main() {
-	fmt.Printf("%v\n", math.MaxInt32)
-	fmt.Printf("%v\n", reverse(1534236469))
 }

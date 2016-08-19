@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package leetcode
 
 func isValid(s string) bool {
 	parentheses := []string{}
@@ -29,6 +27,6 @@ func isValid(s string) bool {
 	return len(parentheses) == 0
 }
 
-func main() {
-	fmt.Printf("%v", isValid("((()))"))
-}
+//func main() {
+//	fmt.Printf("%v", isValid("((()))"))
+//}

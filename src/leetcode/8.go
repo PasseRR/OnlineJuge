@@ -1,9 +1,9 @@
-package main
+package leetcode
+
 import (
-	"strconv"
-	"fmt"
-	"strings"
 	"math"
+	"strconv"
+	"strings"
 )
 
 func myAtoi(str string) int {
@@ -15,12 +15,12 @@ func myAtoi(str string) int {
 		if string(value) == " " {
 			if flg {
 				// 若遇到非空字符后再遇到空字符 直接跳出并截取字符串
-				str = str[start : index]
+				str = str[start:index]
 				break
-			}else {
+			} else {
 				continue
 			}
-		}else {
+		} else {
 			if !flg {
 				start = index
 				flg = true
@@ -28,19 +28,19 @@ func myAtoi(str string) int {
 
 			// 第一个非空字符是 + -
 			if index == start &&
-			(string(value) == "-" || string(value) == "+") {
+				(string(value) == "-" || string(value) == "+") {
 				continue
 			}
 
 			// 当遇到非数字字符
 			if !strings.ContainsAny(string(value), digits) {
-				str = str[start : index]
+				str = str[start:index]
 				break
 			}
 
 			// 遍历到字符串最后
 			if index == len(str)-1 {
-				str = str[start : len(str)]
+				str = str[start:len(str)]
 			}
 		}
 	}
@@ -54,8 +54,4 @@ func myAtoi(str string) int {
 		i = math.MinInt32
 	}
 	return i
-}
-
-func main() {
-	fmt.Printf("%v\n", myAtoi("123  456"))
 }

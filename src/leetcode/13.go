@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package leetcode
 
 func romanToInt(s string) int {
 	romans := []string{
@@ -28,8 +26,4 @@ func romanToInt(s string) int {
 	}
 
 	return result
-}
-
-func main() {
-	fmt.Printf("%v", romanToInt("DCXXI"))
 }

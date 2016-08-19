@@ -1,9 +1,4 @@
-package main
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+package leetcode
 
 func swapPairs(head *ListNode) *ListNode {
 	node := &ListNode{}
@@ -35,15 +30,5 @@ func swapPairs(head *ListNode) *ListNode {
 }
 
 func main() {
-	node := &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 2,
-			Next: &ListNode{
-				Val: 3,
-			},
-		},
-	}
 
-	swapPairs(node)
 }

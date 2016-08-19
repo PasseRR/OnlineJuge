@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package leetcode
 
 func generateParenthesis(n int) []string {
 	const pair string = "()"
@@ -39,6 +37,6 @@ func generateParenthesis(n int) []string {
 	return result
 }
 
-func main() {
-	fmt.Printf("%v", generateParenthesis(4))
-}
+//func main() {
+//	fmt.Printf("%v", generateParenthesis(4))
+//}

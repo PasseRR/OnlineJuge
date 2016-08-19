@@ -1,11 +1,6 @@
-package main
+package leetcode
 
 import "fmt"
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
 
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	// 初始化一个空节点 最后返回链表的时候不要这个节点
@@ -45,28 +40,4 @@ func print(node *ListNode) {
 		fmt.Printf("%v->", i.Val)
 	}
 	fmt.Printf("\n")
-}
-
-func main() {
-	node1 := &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 3,
-		},
-	}
-
-	node2 := &ListNode{
-		Val: 2,
-		Next: &ListNode{
-			Val: 4,
-			Next: &ListNode{
-				Val: 55,
-			},
-		},
-	}
-
-	node := mergeTwoLists(nil, nil)
-	print(node)
-	print(node1)
-	print(node2)
 }

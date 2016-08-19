@@ -1,7 +1,6 @@
-package main
+package leetcode
 
 import (
-	"fmt"
 	"strconv"
 )
 
@@ -21,8 +20,4 @@ func isPalindrome(x int) bool {
 	}
 
 	return isPanlindromeString(strconv.Itoa(x))
-}
-
-func main() {
-	fmt.Printf("%v\n", isPalindrome(12321))
 }

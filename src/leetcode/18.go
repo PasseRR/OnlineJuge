@@ -1,7 +1,6 @@
-package main
+package leetcode
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -38,8 +37,4 @@ func fourSum(nums []int, target int) [][]int {
 	}
 
 	return result
-}
-
-func main() {
-	fmt.Printf("%v", fourSum([]int{0, 0, 0, 0}, 1))
 }
