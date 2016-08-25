@@ -28,7 +28,3 @@ func swapPairs(head *ListNode) *ListNode {
 
 	return node.Next
 }
-
-func main() {
-
-}

@@ -36,7 +36,3 @@ func generateParenthesis(n int) []string {
 
 	return result
 }
-
-//func main() {
-//	fmt.Printf("%v", generateParenthesis(4))
-//}

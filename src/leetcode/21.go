@@ -34,10 +34,3 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	// 去掉int默认为0的情况
 	return node.Next
 }
-
-func print(node *ListNode) {
-	for i := node; i != nil; i = i.Next {
-		fmt.Printf("%v->", i.Val)
-	}
-	fmt.Printf("\n")
-}
