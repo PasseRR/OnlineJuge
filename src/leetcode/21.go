@@ -1,7 +1,5 @@
 package leetcode
 
-import "fmt"
-
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	// 初始化一个空节点 最后返回链表的时候不要这个节点
 	node := &ListNode{}
