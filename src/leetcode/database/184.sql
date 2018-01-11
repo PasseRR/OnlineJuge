@@ -18,7 +18,7 @@ WHERE
       DepartmentId = e.DepartmentId
       AND Salary > e.Salary
   )
-  AND d.Id IS NOT NULL
+  AND d.Id IS NOT NULL;
 
 -- 方法二
 SELECT
