@@ -4,7 +4,7 @@ SELECT
 FROM (
        SELECT
          Request_at,
-         count(1) AS total
+         COUNT(1) AS total
        FROM Trips t LEFT JOIN Users u ON t.Client_Id = u.Users_Id
        WHERE
          u.Banned = 'No'
@@ -13,7 +13,7 @@ FROM (
   LEFT JOIN (
               SELECT
                 Request_at,
-                count(1) AS canceled
+                COUNT(1) AS canceled
               FROM Trips t LEFT JOIN Users u ON t.Client_Id = u.Users_Id
               WHERE
                 u.Banned = 'No' AND
