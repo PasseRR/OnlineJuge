@@ -1,8 +1,6 @@
 package page1
 
 import (
-	"fmt"
-	"strconv"
 	"testing"
 )
 
