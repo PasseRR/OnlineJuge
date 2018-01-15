@@ -19,7 +19,7 @@ func PrintNode(node *ListNode) {
 			fmt.Printf("%v", i.Val)
 		}
 	}
-	fmt.Printf("\n")
+	fmt.Print("\n")
 }
 
 // 打印单链表数组
