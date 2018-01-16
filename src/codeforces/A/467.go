@@ -1,15 +1,16 @@
 package main
+
 import "fmt"
 
-func main(){
+func main() {
 	var (
 		n, p, q int
-		count int
+		count   int
 	)
 	fmt.Scanln(&n)
 	for i := 0; i < n; i++ {
 		fmt.Scanf("%d %d\n", &p, &q)
-		if q - p >= 2 {
+		if q-p >= 2 {
 			count += 1
 		}
 	}

@@ -1,26 +1,27 @@
 package main
+
 import "fmt"
 
 func main() {
 	var (
-		n int
+		n      int
 		height = 0
 	)
 	fmt.Scanln(&n)
-	for{
-		sum := sum(height+1)
+	for {
+		sum := sum(height + 1)
 		if n-sum >= 0 {
 			n -= sum
-			height ++
-		}else {
-			break;
+			height++
+		} else {
+			break
 		}
 	}
 
 	fmt.Println(height)
 }
 
-func sum(n int)(sum int){
+func sum(n int) (sum int) {
 	for i := 1; i <= n; i++ {
 		sum += i
 	}
