@@ -11,11 +11,11 @@ func combinationSum(candidates []int, target int) [][]int {
 	result := [][]int{}
 	// 初始化结果集
 	combination = [][]int{}
-	// 升序排序元数据
+	// 排序、去重元数据
 	sort.Ints(candidates)
 
 	backtrackingSum(candidates, []int{}, target)
-	// 去重结果集
+	// 去重
 	for _, sub := range combination {
 		length := len(sub)
 		if length == 1 {
