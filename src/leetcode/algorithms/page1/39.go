@@ -4,17 +4,15 @@ import (
 	"sort"
 )
 
-var combination [][]int
-
 func combinationSum(candidates []int, target int) [][]int {
 	// 最终结果
 	result := [][]int{}
 	// 初始化结果集
-	combination = [][]int{}
+	combination := [][]int{}
 	// 排序、去重元数据
 	sort.Ints(candidates)
 
-	backtrackingSum(candidates, []int{}, target)
+	backtrackingSum(candidates, []int{}, target, &combination)
 	// 去重
 	for _, sub := range combination {
 		length := len(sub)
@@ -37,12 +35,12 @@ func combinationSum(candidates []int, target int) [][]int {
 	return result
 }
 
-func backtrackingSum(candidates, solution []int, target int) {
+func backtrackingSum(candidates, solution []int, target int, combination *[][]int) {
 	for _, candidate := range candidates {
 		if candidate < target {
 			solution = append(solution, candidate)
 			// 减去已经加上的数字
-			backtrackingSum(candidates, solution, target-candidate)
+			backtrackingSum(candidates, solution, target-candidate, combination)
 			// 回溯
 			solution = solution[:len(solution)-1]
 		} else {
@@ -51,7 +49,7 @@ func backtrackingSum(candidates, solution []int, target int) {
 				// 复制slice
 				s := make([]int, len(solution))
 				copy(s, solution)
-				combination = append(combination, s)
+				*combination = append(*combination, s)
 			}
 
 			break
