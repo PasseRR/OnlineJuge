@@ -6,11 +6,8 @@ const (
 	QUEEN = 'Q'
 )
 
-// 结果
-var solutions [][]string
-
 func solveNQueens(n int) [][]string {
-	solutions = [][]string{}
+	solutions := [][]string{}
 	queens := [][]byte{}
 	for i := 0; i < n; i++ {
 		row := []byte{}
@@ -19,11 +16,11 @@ func solveNQueens(n int) [][]string {
 		}
 		queens = append(queens, row)
 	}
-	backtrackingFillQueens(queens, 0)
+	backtrackingFillQueens(queens, 0, &solutions)
 	return solutions
 }
 
-func backtrackingFillQueens(queens [][]byte, row int) bool {
+func backtrackingFillQueens(queens [][]byte, row int, solutions *[][]string) bool {
 	length := len(queens)
 	for i := 0; i < length; i++ {
 		if isLegal(queens, row, i) {
@@ -35,9 +32,9 @@ func backtrackingFillQueens(queens [][]byte, row int) bool {
 				for _, value := range queens {
 					solution = append(solution, string(value))
 				}
-				solutions = append(solutions, solution)
+				*solutions = append(*solutions, solution)
 			} else {
-				backtrackingFillQueens(queens, row+1)
+				backtrackingFillQueens(queens, row+1, solutions)
 			}
 			// 回溯
 			queens[row][i] = POINT
