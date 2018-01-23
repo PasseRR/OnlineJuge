@@ -4,17 +4,15 @@ import (
 	"sort"
 )
 
-var combination2 [][]int
-
 func combinationSum2(candidates []int, target int) [][]int {
 	// 最终结果
 	result := [][]int{}
 	// 初始化结果集
-	combination2 = [][]int{}
+	combination := [][]int{}
 	sort.Ints(candidates)
-	backtrackingSum2(candidates, []int{}, target)
+	backtrackingSum2(candidates, []int{}, target, &combination)
 	// 去重
-	for _, sub := range combination2 {
+	for _, sub := range combination {
 		sort.Ints(sub)
 		if !isSolutionExists(sub, result) {
 			result = append(result, sub)
@@ -45,7 +43,7 @@ func isSolutionExists(solution []int, result [][]int) bool {
 	return false
 }
 
-func backtrackingSum2(candidates, solution []int, target int) {
+func backtrackingSum2(candidates, solution []int, target int, combination *[][]int) {
 	for i, candidate := range candidates {
 		if candidate < target {
 			solution = append(solution, candidate)
@@ -53,7 +51,7 @@ func backtrackingSum2(candidates, solution []int, target int) {
 			c := make([]int, len(candidates))
 			copy(c, candidates)
 			// 减去已经加上的数字
-			backtrackingSum2(append(c[:i], c[i+1:]...), solution, target-candidate)
+			backtrackingSum2(append(c[:i], c[i+1:]...), solution, target-candidate, combination)
 			// 回溯
 			solution = solution[:len(solution)-1]
 		} else {
@@ -62,7 +60,7 @@ func backtrackingSum2(candidates, solution []int, target int) {
 				// 复制slice
 				s := make([]int, len(solution))
 				copy(s, solution)
-				combination2 = append(combination2, s)
+				*combination = append(*combination, s)
 			}
 
 			break
